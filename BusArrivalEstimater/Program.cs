@@ -10,6 +10,15 @@ namespace BusArrivalEstimater
     {
         static void Main(string[] args)
         {
+            if (args == null || args.Length == 0)
+            {
+                args = getInputFromUser();
+            }
+        }
+
+        private static string[] getInputFromUser()
+        {
+            throw new NotImplementedException();
         }
     }
 }
