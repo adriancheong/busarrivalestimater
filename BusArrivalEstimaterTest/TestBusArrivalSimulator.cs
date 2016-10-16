@@ -7,7 +7,7 @@ namespace BusArrivalEstimaterTest
     [TestClass]
     public class TestBusArrivalSimulator
     {
-        private static readonly double delta = 0.001;
+        private static readonly double delta = 0.01;
 
         [TestMethod]
         public void TestMethod1()
@@ -163,6 +163,28 @@ namespace BusArrivalEstimaterTest
             double actual = busArrivalSimulator.waitForBus(busTimes);
 
             Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void earliestBusCannotBeLongerThanFastestBus()
+        {
+            int[] busTimes = { 1, 1, 1 };
+            
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.simulateABusComingNTimes(busTimes, 1);
+
+            Assert.IsTrue(actual <= 1);
+        }
+
+        [TestMethod]
+        public void earliestBusCannotBeLongerThanFastestBus2()
+        {
+            int[] busTimes = { 1, 60, 999 };
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.simulateABusComingNTimes(busTimes, 1);
+
+            Assert.IsTrue(actual <= 1);
         }
     }
 }
