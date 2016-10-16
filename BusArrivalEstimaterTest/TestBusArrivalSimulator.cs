@@ -130,9 +130,21 @@ namespace BusArrivalEstimaterTest
         }
 
         [TestMethod]
-        public void TestMethod11()
+        public void TestMethod102()
         {
-            string[] busTimes = { "1", "1" };
+            string[] busTimes = { "2", "2", "2" };
+            double expected = 0.333333;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestMethod103()
+        {
+            string[] busTimes = { "2", "2", "2", "2" };
             double expected = 0.25;
 
             BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
@@ -142,9 +154,57 @@ namespace BusArrivalEstimaterTest
         }
 
         [TestMethod]
-        public void TestMethod12()
+        public void TestOnes1()
+        {
+            string[] busTimes = { "1" };
+            double expected = 0.5;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes2()
+        {
+            string[] busTimes = { "1", "1" };
+            double expected = 0.333333;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes3()
         {
             string[] busTimes = { "1", "1", "1" };
+            double expected = 0.25;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes4()
+        {
+            string[] busTimes = { "1", "1", "1", "1" };
+            double expected = 0.2;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes5()
+        {
+            string[] busTimes = { "1", "1", "1", "1", "1" };
             double expected = 0.166667;
 
             BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
@@ -154,10 +214,82 @@ namespace BusArrivalEstimaterTest
         }
 
         [TestMethod]
-        public void TestMethod13()
+        public void TestOnes6()
         {
-            string[] busTimes = { "1", "1", "1", "1" };
+            string[] busTimes = { "1", "1", "1", "1", "1", "1" };
+            double expected = 0.142857;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes7()
+        {
+            string[] busTimes = { "1", "1", "1", "1", "1", "1", "1" };
             double expected = 0.125;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes8()
+        {
+            string[] busTimes = { "1", "1", "1", "1", "1", "1", "1", "1" };
+            double expected = 0.111111;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestOnes9()
+        {
+            string[] busTimes = { "1", "1", "1", "1", "1", "1", "1", "1", "1" };
+            double expected = 0.1;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestMethod14()
+        {
+            string[] busTimes = { "2", "4" };
+            double expected = 0.666667;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestMethod15()
+        {
+            string[] busTimes = { "1", "2" };
+            double expected = 0.333333;
+
+            BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
+            double actual = busArrivalSimulator.waitForBus(busTimes);
+
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod]
+        public void TestMethod16()
+        {
+            string[] busTimes = { "5", "10" };
+            double expected = 1.666667;
 
             BusArrivalSimulator busArrivalSimulator = new BusArrivalSimulator();
             double actual = busArrivalSimulator.waitForBus(busTimes);
