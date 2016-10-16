@@ -10,7 +10,6 @@ namespace BusArrivalEstimater
     {
         private static readonly int NO_OF_SIMLUATIONS = 100000;
         private static readonly int NO_OF_THREADS = 4;
-        private static readonly Random random = new Random();
 
         public double waitForBus(string[] busTimesString)
         {
@@ -37,7 +36,7 @@ namespace BusArrivalEstimater
             for (int i = 0; i < noOfSimulations; i++)
             {
                 var waitTime = simulateABusComing(busTimes);
-                System.Diagnostics.Debug.WriteLine("Bus came in " + waitTime);
+                System.Diagnostics.Debug.WriteLine("Average " + sum/i);
                 sum += waitTime;
             }
             return sum;
@@ -58,6 +57,7 @@ namespace BusArrivalEstimater
 
         private double generateARandomNumberBetweenZeroAndThisBusTime(int busTime)
         {
+            Random random = new Random(Guid.NewGuid().GetHashCode());
             return random.NextDouble() * busTime;
         }
 
